@@ -1,43 +1,42 @@
 
-# project title
+# Weather Dashboard
 
-![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
+![Github license](https://img.shields.io/badge/license-Apache2.0-blue.svg)
 
 ## Table of content
-    * [Go to](#-Description)
-    * Installation
     * Usage
-    * undefined
-    * undefined
+    * Usage
+    * Contributions
+    * License
+    * Tests
     * undefined
 
 ## Description 
-Project description to follow.
+This applications display a five day weather forecast for the selected city. The application makes two calls to the openweather API. The first call retrieves the coordinates of the selected city and the second retrieves the weather infomation for the day and the forecast for the next seven days. A display of the retrieve data for London city is shown below. ![WorkDaySchedule](./assets/images/WeatherDashboard.jpg)
 
 
 ## Installation
-Installation details to be provided later
+Installation not required
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+
 
 ## Contributions
-List of contributions will be provided here.
-State if you are open to contributions and what your requirements are for accepting them.
+This project was put together by a team of four. The work was divided along the lines of JavaScript coding, Weather API integration, Quote of the day API and Project manangement. There was considerable collaboratoin by team members with each other's work. The technical support provided by the Birmingham University staff is gratefully acknowledged.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
 ## License
-MIT
+For more details on the licence, please click on the link below:   
+https://opensource.org/licenses/Apache2.0
 
-For open source projects, say how it is licensed.
 
-##Tests 
-none
+## Tests 
+There was extensive unit testing of the weather testing, scheduler code, Quote API and integration testing of the whole project. There was aesthetic feedback from a select group. The application was found to be functional, stable and easy to use.
 
-## Application
-Click the link below to view the application.
-https://amoham1811.github.io/Readme_Generator/
+## Questions
+Click the link below to author profile.
+https://github.com/amoham1811
+
+User email:mohammed_wok@yahoo.co.uk  
+If you have any questions you can email at the above address or visit my page on Github page using the link above.
 

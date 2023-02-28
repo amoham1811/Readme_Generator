@@ -1,7 +1,7 @@
-Project Title: Professional Readme Automation
+Project Title: Readme Generator
 Table of content:Drop down
 Description: This application takes in user input and creates a readme file with the markdown formatting. The application makes the user input easy by the use of lists and multiple selections. It automatically creates license badge, links to application and video clip demonstration of application.
-Installation:Enter details about how to installation software for this application to work. 
+Installation: Enter details about how to installation software for this application to work. 
 
 Contributions: Everyone.
 License:Select from list
