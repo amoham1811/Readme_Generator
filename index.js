@@ -2,7 +2,7 @@ import inquirer from "inquirer";
 import fs from 'fs/promises'
 import test from "node:test";
 
-const {title, table_content, description, installation, contributions, license, tests, github} = await inquirer
+const {title, table_content, description, installation, contributions, license, tests, github,email} = await inquirer
     .prompt([
         {
             name: 'title',
@@ -48,11 +48,13 @@ const {title, table_content, description, installation, contributions, license, 
             name: 'github',
             input: 'input',
             message: "Please enter your github username? "
+        },
+        {
+            name: 'email',
+            input: 'input',
+            message: "Please enter your email address? "
         }
 ])
-
-console.log(title, table_content, description, installation, contributions, license, tests, github);
-
 
 const readme =  `
 # ${title}
@@ -60,7 +62,7 @@ const readme =  `
 ![Github license](https://img.shields.io/badge/license-${license}-blue.svg)
 
 ## Table of content
-    * ${table_content[0]}
+    * ${table_content[1]}
     * ${table_content[1]}
     * ${table_content[2]}
     * ${table_content[3]}
@@ -75,27 +77,26 @@ ${description}
 ${installation}
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+
 
 ## Contributions
 ${contributions}
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
 ## License
-${license}
+For more details on the licence, please click on the link below:   
+https://opensource.org/licenses/${license}
 
-For open source projects, say how it is licensed.
 
-##Tests 
+## Tests 
 ${tests}
 
-## Application
-Click the link below to view the application.
-https://${github}.github.io/Readme_Generator/
+## Questions
+Click the link below to author profile.
+https://github.com/${github}
+
+User email:${email}  
+If you have any questions you can email at the above address or visit my page on Github page using the link above.
 
 `
 
