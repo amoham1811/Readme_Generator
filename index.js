@@ -1,43 +1,43 @@
 import inquirer from "inquirer";
 import fs from 'fs/promises'
+import test from "node:test";
 
-const {title, description, table_content, installation, license, contributions, tests, github} = await inquirer
+const {title, table_content, description, installation, contributions, license, tests, github} = await inquirer
     .prompt([
         {
             name: 'title',
             type:'input',
-            // input: 'input',
             message: "What is the name of your project? "
-        },
-        {
-            name: 'description',
-            type:'input',
-            // input: 'input',
-            message: "Please enter a description of your project? "
         },
         {
             name: 'table_content',
             type: 'checkbox',
-            // input: 'input',
-            message: "Please select items for your table of content? ",
-            choices:['Description','Installation','Usage']
+            message: "Please select section headings for your table of content? ",
+            choices:['Description','Installation','Usage','Contributions','License','Tests']
+        },
+        {
+            name: 'description',
+            default: 'Project description to follow.',
+            type:'input',
+            message: "Please enter a description of your project? "
         },
         {
             name: 'installation',
+            default: 'Installation details to be provided later',
             type: 'input',
             message: "Please, enter installation details: "
         },
         {
-            name: 'license',
-            type:'list',
-            // input: 'input',
-            message: "What is your linkedIn? ",
-            choices:['license1','licence2','license3']
-        },
-        {
             name: 'contributions',
+            default: 'List of contributions will be provided here.',
             type: 'input',
             message: "Who has contributed to this project? "
+        },
+        {
+            name: 'license',
+            type:'list',
+            message: "What is your linkedIn? ",
+            choices:['GPL2.0','MIT','Apache2.0','GPL3.0','BSD2.0']
         },
         {
             name: 'tests',
@@ -51,43 +51,31 @@ const {title, description, table_content, installation, license, contributions, 
         }
 ])
 
-console.log(title, description, table_content, installation, license, contributions, tests, github);
+console.log(title, table_content, description, installation, contributions, license, tests, github);
 
 
 const readme =  `
 # ${title}
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+![Github license](https://img.shields.io/badge/license-${license}-blue.svg)
 
 ## Table of content
-    . #(${table_content[0]})
-    . ${table_content[1]}
-    . ${table_content[2]}
-    . ${table_content[3]}
-    . ${table_content[4]}
-    . ${table_content[5]}
+    * ${table_content[0]}
+    * ${table_content[1]}
+    * ${table_content[2]}
+    * ${table_content[3]}
+    * ${table_content[4]}
+    * ${table_content[5]}
 
-## Description
+## Description 
 ${description}
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
 ## Installation
 ${installation}
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
 
 ## Usage
-
 Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
 
 ## Contributions
 ${contributions}
@@ -97,16 +85,13 @@ For people who want to make changes to your project, it's helpful to have some d
 
 You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
 ## License
 ${license}
 
 For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+##Tests 
+${tests}
 
 ## Application
 Click the link below to view the application.
